@@ -1,6 +1,6 @@
 {
-  "name": "GPS L5 — Elecrow LoRaWAN Gateway",
-  "version": "2026-05-24 (51fcafe)",
+  "name": "NAVIGATE — Elecrow Gateway",
+  "version": "2026-05-24 (8eddcb3)",
   "new_install_prompt_erase": true,
   "builds": [
     {

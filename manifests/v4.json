@@ -1,6 +1,6 @@
 {
-  "name": "GPS L5 — Heltec WiFi LoRa 32 V4",
-  "version": "2026-05-24 (51fcafe)",
+  "name": "NAVIGATE — Heltec 32 V4",
+  "version": "2026-05-24 (8eddcb3)",
   "new_install_prompt_erase": true,
   "builds": [
     {

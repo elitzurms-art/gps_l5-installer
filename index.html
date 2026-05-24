@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="build-date" content="2026-05-24 (51fcafe)"/>
-    <title>GPS L5 — Heltec firmware installer</title>
+    <meta name="build-date" content="2026-05-24 (8eddcb3)"/>
+    <title>התקנת קושחת NAVIGATE</title>
     <link rel="icon" href="data:," />
     <script
       type="module"
@@ -118,9 +118,9 @@
   <body>
     <main>
       <header>
-        <h1>GPS L5 — Heltec firmware installer</h1>
+        <h1>התקנת קושחת NAVIGATE</h1>
         <p class="sub">
-          צריבת קושחת ה-<code>um980_ble_bridge</code> ישירות מהדפדפן ל-Heltec / Elecrow מחובר ב-USB.
+          צריבת קושחת ה-NAVIGATE ישירות מהדפדפן דרך ה-USB.
         </p>
         <p class="meta">
           גרסה אחרונה: <code id="build-date">לא ידוע — ה-CI עוד לא רץ</code>
@@ -140,38 +140,38 @@
           <div class="tags">
             <span class="tag">ESP32-S3</span><span class="tag">SX1262</span><span class="tag">TFT 160×80</span><span class="tag">UC6580 onboard</span>
           </div>
-          <p>full node — מארח ל-UM980 חיצוני, תצוגה צבעונית, רילי LoRa, GPS עזר לאיתור יחידה אבודה.</p>
+          <p>full node — מארח ל-GPS מוקשח חיצוני, תצוגה צבעונית, רילי תקשורת מש, GPS עזר לאיתור יחידה אבודה.</p>
           <div class="install-row">
             <esp-web-install-button manifest="manifests/tracker.json"></esp-web-install-button>
           </div>
         </div>
 
         <div class="card">
-          <h3>Heltec WiFi LoRa 32 V4</h3>
+          <h3>Heltec 32 V4</h3>
           <div class="tags">
-            <span class="tag">ESP32-S3</span><span class="tag">SX1262</span><span class="tag">OLED (כבוי)</span>
+            <span class="tag">ESP32-S3</span><span class="tag">SX1262</span><span class="tag">OLED 128×64</span>
           </div>
-          <p>comms-only relay — LoRa + BLE בלבד. אותם פיני LoRa כמו Tracker, ה-OLED לא מאותחל בקושחה הזו.</p>
+          <p>comms-only relay — תקשורת מש + BLE + מסך OLED מונוכרום. אותם פיני תקשורת מש כמו Tracker.</p>
           <div class="install-row">
             <esp-web-install-button manifest="manifests/v4.json"></esp-web-install-button>
           </div>
         </div>
 
         <div class="card">
-          <h3>Heltec WiFi LoRa 32 V3</h3>
+          <h3>Heltec 32 V3</h3>
           <div class="tags">
-            <span class="tag">ESP32-S3</span><span class="tag">SX1262</span><span class="tag">OLED (כבוי)</span>
+            <span class="tag">ESP32-S3</span><span class="tag">SX1262</span><span class="tag">OLED 128×64</span>
           </div>
-          <p>זהה ל-V4 מבחינת LoRa. שונה רק בפיני OLED — לא משפיע על הפונקציה הראשית.</p>
+          <p>זהה ל-V4 בכל המובנים שמעניינים — תקשורת מש + BLE + מסך OLED מונוכרום.</p>
           <div class="install-row">
             <esp-web-install-button manifest="manifests/v3.json"></esp-web-install-button>
           </div>
         </div>
 
         <div class="card">
-          <h3>Heltec WiFi LoRa 32 V2</h3>
+          <h3>Heltec 32 V2</h3>
           <div class="tags">
-            <span class="tag">ESP32 classic</span><span class="tag">SX1276</span><span class="tag">CH340 USB</span>
+            <span class="tag">ESP32 classic</span><span class="tag">SX1276</span><span class="tag">OLED 128×64</span><span class="tag">CH340 USB</span>
           </div>
           <p>הדור הישן. ייתכן שלוחות clone דורשים BOOT+RST ידני אם ה-auto-bootloader לא עובד.</p>
           <div class="install-row">
@@ -180,11 +180,11 @@
         </div>
 
         <div class="card">
-          <h3>Elecrow LoRaWAN Gateway</h3>
+          <h3>Elecrow Gateway</h3>
           <div class="tags">
             <span class="tag">ESP32 classic</span><span class="tag">Ra-01H / SX1276</span><span class="tag">ST7735S 128×160</span>
           </div>
-          <p>תצוגה צבעונית, גשר UM980 + LoRa. משתמש ב-polling ל-TX/RX כי DIO0 מי-מנותב על הלוח.</p>
+          <p>תצוגה צבעונית, גשר GPS מוקשח + תקשורת מש. משתמש ב-polling ל-TX/RX כי DIO0 מי-מנותב על הלוח.</p>
           <div class="install-row">
             <esp-web-install-button manifest="manifests/elecrow.json"></esp-web-install-button>
           </div>
@@ -197,11 +197,11 @@
           <li>חבר את הלוח ל-USB.</li>
           <li>בחר את הכרטיס שמתאים לדגם שלך ולחץ <strong>Install</strong>.</li>
           <li>הדפדפן יבקש הרשאה ל-Serial port — בחר את הפורט (בדרך כלל אחד יחיד שמופיע אחרי חיבור הלוח).</li>
-          <li>הצריבה תרוץ אוטומטית. ה-firmware מוגדר ל-868 MHz / SF9 / BW250 / sync word 0x34, ומפרסם BLE בשם <code>UM980-Heltec-XXXX</code> (4 הקסה תחתונים של ה-MAC).</li>
+          <li>הצריבה תרוץ אוטומטית. הקושחה מוגדרת ל-868 MHz / SF9 / BW250 / sync word 0x34, ומפרסמת BLE בשם <code>GPS-Heltec-XXXX</code> (4 הקסה תחתונים של ה-MAC).</li>
           <li>אם זה V2 או Elecrow ישן והצריבה לא מתחילה: החזק <strong>BOOT</strong> בזמן שאתה לוחץ ושחרר את <strong>RST</strong>, ואז לחץ Install שוב.</li>
         </ol>
         <p>
-          חיווט UM980 חיצוני שונה פר-לוח — ראה את ה-<a href="https://github.com/elitzurms-art/gps_l5/blob/master/firmware/heltec/README.md">README של הקושחה</a> לפינים המדויקים.
+          חיווט GPS מוקשח חיצוני שונה פר-לוח — ראה את ה-<a href="https://github.com/elitzurms-art/gps_l5/blob/master/firmware/heltec/README.md">README של הקושחה</a> לפינים המדויקים.
         </p>
       </details>
 
