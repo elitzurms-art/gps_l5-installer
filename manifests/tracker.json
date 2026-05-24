@@ -1,12 +1,15 @@
 {
   "name": "GPS L5 — Heltec Wireless Tracker V1",
-  "version": "PLACEHOLDER_DATE",
+  "version": "2026-05-24 (51fcafe)",
   "new_install_prompt_erase": true,
   "builds": [
     {
       "chipFamily": "ESP32-S3",
       "parts": [
-        { "path": "../firmware/tracker.bin", "offset": 0 }
+        { "path": "../firmware/tracker/bootloader.bin", "offset": 0 },
+        { "path": "../firmware/tracker/partitions.bin", "offset": 32768 },
+        { "path": "../firmware/boot_app0_s3.bin",      "offset": 57344 },
+        { "path": "../firmware/tracker/app.bin",        "offset": 65536 }
       ]
     }
   ]

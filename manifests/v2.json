@@ -1,12 +1,15 @@
 {
   "name": "GPS L5 — Heltec WiFi LoRa 32 V2",
-  "version": "PLACEHOLDER_DATE",
+  "version": "2026-05-24 (51fcafe)",
   "new_install_prompt_erase": true,
   "builds": [
     {
       "chipFamily": "ESP32",
       "parts": [
-        { "path": "../firmware/v2.bin", "offset": 0 }
+        { "path": "../firmware/v2/bootloader.bin", "offset": 4096 },
+        { "path": "../firmware/v2/partitions.bin", "offset": 32768 },
+        { "path": "../firmware/boot_app0_classic.bin",      "offset": 57344 },
+        { "path": "../firmware/v2/app.bin",        "offset": 65536 }
       ]
     }
   ]

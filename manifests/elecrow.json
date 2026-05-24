@@ -1,12 +1,15 @@
 {
   "name": "GPS L5 — Elecrow LoRaWAN Gateway",
-  "version": "PLACEHOLDER_DATE",
+  "version": "2026-05-24 (51fcafe)",
   "new_install_prompt_erase": true,
   "builds": [
     {
       "chipFamily": "ESP32",
       "parts": [
-        { "path": "../firmware/elecrow.bin", "offset": 0 }
+        { "path": "../firmware/elecrow/bootloader.bin", "offset": 4096 },
+        { "path": "../firmware/elecrow/partitions.bin", "offset": 32768 },
+        { "path": "../firmware/boot_app0_classic.bin",      "offset": 57344 },
+        { "path": "../firmware/elecrow/app.bin",        "offset": 65536 }
       ]
     }
   ]
