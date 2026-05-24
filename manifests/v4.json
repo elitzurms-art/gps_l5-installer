@@ -1,0 +1,13 @@
+{
+  "name": "GPS L5 — Heltec WiFi LoRa 32 V4",
+  "version": "PLACEHOLDER_DATE",
+  "new_install_prompt_erase": true,
+  "builds": [
+    {
+      "chipFamily": "ESP32-S3",
+      "parts": [
+        { "path": "../firmware/v4.bin", "offset": 0 }
+      ]
+    }
+  ]
+}
