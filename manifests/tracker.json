@@ -1,6 +1,6 @@
 {
-  "name": "NAVIGATE — Heltec Wireless Tracker V1",
-  "version": "2026-05-24 (6e98d11)",
+  "name": "NAVIGATE+ — Heltec Wireless Tracker V1",
+  "version": "2026-05-24 (3cf4399)",
   "new_install_prompt_erase": true,
   "builds": [
     {
