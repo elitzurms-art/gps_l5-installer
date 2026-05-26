@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="build-date" content="2026-05-24 (2243c37)"/>
+    <meta name="build-date" content="2026-05-26 (04c7a13)"/>
     <title>התקנת קושחת NAVIGATE+</title>
     <link rel="icon" href="data:," />
     <script
@@ -168,27 +168,6 @@
           </div>
         </div>
 
-        <div class="card">
-          <h3>Heltec 32 V2</h3>
-          <div class="tags">
-            <span class="tag">ESP32 classic</span><span class="tag">SX1276</span><span class="tag">OLED 128×64</span><span class="tag">CH340 USB</span>
-          </div>
-          <p>הדור הישן. ייתכן שלוחות clone דורשים BOOT+RST ידני אם ה-auto-bootloader לא עובד.</p>
-          <div class="install-row">
-            <esp-web-install-button manifest="manifests/v2.json"></esp-web-install-button>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Elecrow Gateway</h3>
-          <div class="tags">
-            <span class="tag">ESP32 classic</span><span class="tag">Ra-01H / SX1276</span><span class="tag">ST7735S 128×160</span>
-          </div>
-          <p>תצוגה צבעונית, גשר GPS מוקשח + תקשורת מש. משתמש ב-polling ל-TX/RX כי DIO0 מי-מנותב על הלוח.</p>
-          <div class="install-row">
-            <esp-web-install-button manifest="manifests/elecrow.json"></esp-web-install-button>
-          </div>
-        </div>
       </section>
 
       <details>
@@ -198,7 +177,7 @@
           <li>בחר את הכרטיס שמתאים לדגם שלך ולחץ <strong>Install</strong>.</li>
           <li>הדפדפן יבקש הרשאה ל-Serial port — בחר את הפורט (בדרך כלל אחד יחיד שמופיע אחרי חיבור הלוח).</li>
           <li>הצריבה תרוץ אוטומטית. הקושחה מוגדרת ל-868 MHz / SF9 / BW250 / sync word 0x34, ומפרסמת BLE בשם <code>NAVIGATE-XXXX</code> (4 הקסה תחתונים של ה-MAC).</li>
-          <li>אם זה V2 או Elecrow ישן והצריבה לא מתחילה: החזק <strong>BOOT</strong> בזמן שאתה לוחץ ושחרר את <strong>RST</strong>, ואז לחץ Install שוב.</li>
+          <li>אם הצריבה לא מתחילה: החזק <strong>BOOT</strong> (PRG) בזמן שאתה לוחץ ושחרר את <strong>RST</strong>, ואז לחץ Install שוב.</li>
         </ol>
         <p>
           חיווט GPS מוקשח חיצוני שונה פר-לוח — ראה את ה-<a href="https://github.com/elitzurms-art/gps_l5/blob/master/firmware/heltec/README.md">README של הקושחה</a> לפינים המדויקים.
@@ -210,7 +189,7 @@
         <ul>
           <li><strong>Web Serial לא נתמך</strong> — חייב Chrome / Edge / Opera על דסקטופ. Android מהדפדפן Chrome כן עובד; iOS אף פעם לא.</li>
           <li><strong>הצריבה תקועה ב-Connecting…</strong> — סגור את כל ה-serial monitors / Arduino IDE / PlatformIO וכל מה שמחזיק את הפורט.</li>
-          <li><strong>Wrong chip detected</strong> — בחרת לוח לא נכון. ESP32 vs ESP32-S3 שונים — ה-Heltec V2/Elecrow הם ESP32 קלאסי, ה-V3/V4/Tracker הם ESP32-S3.</li>
+          <li><strong>Wrong chip detected</strong> — כל הלוחות הנתמכים הם ESP32-S3 (Wireless Tracker V3 / WiFi LoRa 32 V3 / V4). אם הדפדפן מזהה ESP32 קלאסי — זה לוח לא נתמך.</li>
           <li><strong>Bootloop אחרי flash</strong> — בדרך כלל אומר שגודל ה-flash במאניפסט לא תואם ללוח (4MB vs 8MB). פתח issue ב-GitHub.</li>
         </ul>
       </details>
